@@ -44,11 +44,10 @@ var getRounded = function (element) {
 };
 
 var getChartColumnColor = function (name) {
-  var color = 'rgba(255, 0, 0, 1)';
-  if (name !== 'Вы') {
-    color = 'rgba(42, 0, 254, ' + Math.ceil(Math.random() * 10) / 10 + ')';
+  if (name === 'Вы') {
+    return 'rgba(255, 0, 0, 1)';
   }
-  return color;
+  return 'rgba(42, 0, 254, ' + Math.ceil(Math.random() * 10) / 10 + ')';
 };
 
 var renderChartColumn = function (ctx, x, y, width, height, color) {
