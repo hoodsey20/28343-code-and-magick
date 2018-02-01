@@ -44,7 +44,21 @@ var WIZARD_EYES_COLORS = [
   'green',
 ];
 
+var wizards = [];
+
 var getRandomValueFromArray = function (array) {
   var randomIndex = Math.floor(Math.random() * (array.length));
   return array[randomIndex];
 };
+
+var createWizard = function () {
+  return {
+    name: getRandomValueFromArray(WIZARD_NAMES) + ' ' + getRandomValueFromArray(WIZARD_LASTNAMES),
+    coatColor: getRandomValueFromArray(WIZARD_COAT_COLORS),
+    eyesColor: getRandomValueFromArray(WIZARD_EYES_COLORS),
+  };
+};
+
+for (var i = 0; i < SIMILAR_WIZARD_QUANTITY; i++) {
+  wizards.push(createWizard());
+}
