@@ -2,7 +2,6 @@
 
 var setupModalElement = document.querySelector('.setup');
 var setupSimilarElement = document.querySelector('.setup-similar');
-var similarWizardsFragment = document.createDocumentFragment();
 
 var SIMILAR_WIZARD_QUANTITY = 4;
 
@@ -66,6 +65,8 @@ var fillWizardsArray = function () {
 };
 
 var renderSimilarWizards = function () {
+  var similarWizardsFragment = document.createDocumentFragment();
+
   for (var i = 0; i < wizards.length; i++) {
     var wizardElement = similarWizardTemplate.cloneNode(true);
 
