@@ -46,7 +46,7 @@ var setupSimilarElement = document.querySelector('.setup-similar');
 
 var getRandomValueFromArray = function (array) {
   var randomIndex = Math.floor(Math.random() * (array.length));
-  return array[randomIndex];
+  return array.splice(randomIndex, 1);
 };
 
 var generateWizard = function () {
@@ -57,12 +57,12 @@ var generateWizard = function () {
   };
 };
 
-var getWizardsArray = function () {
-  var wizardsArray = [];
+var getWizards = function () {
+  var wizards = [];
   for (var i = 0; i < SIMILAR_WIZARD_QUANTITY; i++) {
-    wizardsArray.push(generateWizard());
+    wizards.push(generateWizard());
   }
-  return wizardsArray;
+  return wizards;
 };
 
 var renderSimilarWizards = function (array) {
@@ -83,5 +83,5 @@ var renderSimilarWizards = function (array) {
 };
 
 setupModalElement.classList.remove('hidden');
-renderSimilarWizards(getWizardsArray());
+renderSimilarWizards(getWizards());
 setupSimilarElement.classList.remove('hidden');
