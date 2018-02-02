@@ -2,7 +2,7 @@
 
 var SIMILAR_WIZARD_QUANTITY = 4;
 
-var WIZARD_NAMES = [
+var wizardNames = [
   'Иван',
   'Хуан Себастьян',
   'Мария',
@@ -13,7 +13,7 @@ var WIZARD_NAMES = [
   'Вашингтон',
 ];
 
-var WIZARD_LASTNAMES = [
+var wizardLastnames = [
   'да Марья',
   'Верон',
   'Мирабелла',
@@ -24,7 +24,7 @@ var WIZARD_LASTNAMES = [
   'Ирвинг',
 ];
 
-var WIZARD_COAT_COLORS = [
+var wizardCoatColors = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -33,7 +33,7 @@ var WIZARD_COAT_COLORS = [
   'rgb(0, 0, 0)',
 ];
 
-var WIZARD_EYES_COLORS = [
+var wizardEyesColors = [
   'black',
   'red',
   'blue',
@@ -51,9 +51,9 @@ var getRandomValueFromArray = function (array) {
 
 var generateWizard = function () {
   return {
-    name: getRandomValueFromArray(WIZARD_NAMES) + ' ' + getRandomValueFromArray(WIZARD_LASTNAMES),
-    coatColor: getRandomValueFromArray(WIZARD_COAT_COLORS),
-    eyesColor: getRandomValueFromArray(WIZARD_EYES_COLORS),
+    name: getRandomValueFromArray(wizardNames) + ' ' + getRandomValueFromArray(wizardLastnames),
+    coatColor: getRandomValueFromArray(wizardCoatColors),
+    eyesColor: getRandomValueFromArray(wizardEyesColors),
   };
 };
 
