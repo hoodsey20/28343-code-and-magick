@@ -41,7 +41,6 @@ var wizardEyesColors = [
   'green',
 ];
 
-var setupModalElement = document.querySelector('.setup');
 var setupSimilarElement = document.querySelector('.setup-similar');
 
 var getRandomValueFromArray = function (array) {
@@ -82,6 +81,59 @@ var renderSimilarWizards = function (array) {
   similarListElement.appendChild(similarWizardsFragment);
 };
 
-setupModalElement.classList.remove('hidden');
 renderSimilarWizards(getWizards());
 setupSimilarElement.classList.remove('hidden');
+
+// код для взаимодействия пользователя с интерактивными элементами
+
+var ESC_KEYCODE = 27;
+var ENTER_KEYCODE = 13;
+
+var setupElement = document.querySelector('.setup');
+var setupOpenElement = document.querySelector('.setup-open');
+var setupCloseElement = setupElement.querySelector('.setup-close');
+var setupInputNameElement = setupElement.querySelector('.setup-user-name');
+
+var setupEscHandler = function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    closePopup();
+  }
+};
+
+var setupEscOnInputHandler = function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    evt.stopPropagation();
+  }
+};
+
+var openPopup = function () {
+  setupElement.classList.remove('hidden');
+  document.addEventListener('keydown', setupEscHandler);
+  setupInputNameElement.addEventListener('keydown', setupEscOnInputHandler);
+};
+
+var closePopup = function () {
+  setupElement.classList.add('hidden');
+  document.removeEventListener('keydown', setupEscHandler);
+  setupInputNameElement.removeEventListener('keydown', setupEscOnInputHandler);
+};
+
+setupOpenElement.addEventListener('click', function () {
+  openPopup();
+});
+
+setupOpenElement.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ENTER_KEYCODE) {
+    openPopup();
+  }
+});
+
+setupCloseElement.addEventListener('click', function () {
+  closePopup();
+});
+
+setupCloseElement.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ENTER_KEYCODE) {
+    closePopup();
+  }
+});
