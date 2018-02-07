@@ -45,7 +45,7 @@ var setupSimilarElement = document.querySelector('.setup-similar');
 
 var getRandomValueFromArray = function (array) {
   var randomIndex = Math.floor(Math.random() * (array.length));
-  return array.splice(randomIndex, 1);
+  return array[randomIndex];
 };
 
 var generateWizard = function () {
@@ -94,6 +94,12 @@ var setupOpenElement = document.querySelector('.setup-open');
 var setupCloseElement = setupElement.querySelector('.setup-close');
 var setupInputNameElement = setupElement.querySelector('.setup-user-name');
 
+var wizardCoatElement = document.querySelector('.setup-wizard .wizard-coat');
+
+var setCoatColor = function () {
+  wizardCoatElement.style.fill = getRandomValueFromArray(wizardCoatColors);
+};
+
 var setupEscHandler = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
@@ -137,3 +143,5 @@ setupCloseElement.addEventListener('keydown', function (evt) {
     closePopup();
   }
 });
+
+wizardCoatElement.addEventListener('click', setCoatColor);
