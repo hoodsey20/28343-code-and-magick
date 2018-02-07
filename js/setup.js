@@ -89,6 +89,14 @@ setupSimilarElement.classList.remove('hidden');
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
+var wizardFireballColors = [
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848',
+];
+
 var setupElement = document.querySelector('.setup');
 var setupOpenElement = document.querySelector('.setup-open');
 var setupCloseElement = setupElement.querySelector('.setup-close');
@@ -96,6 +104,8 @@ var setupInputNameElement = setupElement.querySelector('.setup-user-name');
 
 var wizardCoatElement = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyesElement = document.querySelector('.setup-wizard .wizard-eyes');
+var wizardFireballElement = document.querySelector('.setup-fireball-wrap');
+
 
 var setCoatColor = function () {
   wizardCoatElement.style.fill = getRandomValueFromArray(wizardCoatColors);
@@ -103,6 +113,10 @@ var setCoatColor = function () {
 
 var setEyesColor = function () {
   wizardEyesElement.style.fill = getRandomValueFromArray(wizardEyesColors);
+};
+
+var setFireballColor = function () {
+  wizardFireballElement.style.background = getRandomValueFromArray(wizardFireballColors);
 };
 
 var setupEscHandler = function (evt) {
@@ -151,3 +165,4 @@ setupCloseElement.addEventListener('keydown', function (evt) {
 
 wizardCoatElement.addEventListener('click', setCoatColor);
 wizardEyesElement.addEventListener('click', setEyesColor);
+wizardFireballElement.addEventListener('click', setFireballColor);
