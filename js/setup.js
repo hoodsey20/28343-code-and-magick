@@ -95,9 +95,14 @@ var setupCloseElement = setupElement.querySelector('.setup-close');
 var setupInputNameElement = setupElement.querySelector('.setup-user-name');
 
 var wizardCoatElement = document.querySelector('.setup-wizard .wizard-coat');
+var wizardEyesElement = document.querySelector('.setup-wizard .wizard-eyes');
 
 var setCoatColor = function () {
   wizardCoatElement.style.fill = getRandomValueFromArray(wizardCoatColors);
+};
+
+var setEyesColor = function () {
+  wizardEyesElement.style.fill = getRandomValueFromArray(wizardEyesColors);
 };
 
 var setupEscHandler = function (evt) {
@@ -145,3 +150,4 @@ setupCloseElement.addEventListener('keydown', function (evt) {
 });
 
 wizardCoatElement.addEventListener('click', setCoatColor);
+wizardEyesElement.addEventListener('click', setEyesColor);
