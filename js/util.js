@@ -14,6 +14,14 @@ window.util = (function () {
       if (evt.keyCode === ENTER_KEYCODE) {
         action();
       }
+    },
+    getRandomValueFromArray: function (array) {
+      var randomIndex = Math.floor(Math.random() * (array.length));
+      return array[randomIndex];
+    },
+    getUniqueRandomValueFromArray: function (array) {
+      var randomIndex = Math.floor(Math.random() * (array.length));
+      return array.splice(randomIndex, 1);
     }
   };
 })();
