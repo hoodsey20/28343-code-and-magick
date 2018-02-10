@@ -96,9 +96,6 @@ setupSimilarElement.classList.remove('hidden');
 
 // код для взаимодействия пользователя с интерактивными элементами
 
-var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
-
 var wizardFireballColors = [
   '#ee4830',
   '#30a8ee',
@@ -130,15 +127,13 @@ var setFireballColor = function () {
 };
 
 var setupEscHandler = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE) {
-    closePopup();
-  }
+  window.util.isEscEvent(evt, closePopup);
 };
 
 var setupEscOnInputHandler = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE) {
+  window.util.isEscEvent(evt, function () {
     evt.stopPropagation();
-  }
+  });
 };
 
 var openPopup = function () {
@@ -158,9 +153,7 @@ setupOpenElement.addEventListener('click', function () {
 });
 
 setupOpenElement.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    openPopup();
-  }
+  window.util.isEnterEvent(evt, openPopup);
 });
 
 setupCloseElement.addEventListener('click', function () {
@@ -168,9 +161,7 @@ setupCloseElement.addEventListener('click', function () {
 });
 
 setupCloseElement.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    closePopup();
-  }
+  window.util.isEnterEvent(evt, closePopup);
 });
 
 wizardCoatElement.addEventListener('click', setCoatColor);
