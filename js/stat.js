@@ -35,14 +35,6 @@ var renderText = function (ctx, text, x, y) {
   ctx.fillText(text, x, y);
 };
 
-var getMaxOfArray = function (listOfNumbers) {
-  return Math.max.apply(null, listOfNumbers);
-};
-
-var getRounded = function (element) {
-  return Math.round(element);
-};
-
 var getChartColumnColor = function (name) {
   if (name === 'Вы') {
     return 'rgba(255, 0, 0, 1)';
@@ -58,9 +50,9 @@ var renderChartColumn = function (ctx, x, y, width, height, color) {
 window.renderStatistics = function (ctx, names, times) {
   var nameTextYcoordinate = CLOUD_HEIGHT - PADDING;
   // округляем до целых результаты игроков
-  var playersTimeResults = times.map(getRounded);
+  var playersTimeResults = times.map(window.util.getRounded);
   // находим максимальное значение из результатов игроков
-  var maxTime = getMaxOfArray(playersTimeResults);
+  var maxTime = window.util.getMaxOfArray(playersTimeResults);
 
   // рисуем popup с результатами
   renderCloud(ctx, CLOUD_X, CLOUD_Y, CLOUD_WIDTH, CLOUD_HEIGHT, '#fff', 'rgba(0, 0, 0, 0.3)');
