@@ -30,8 +30,8 @@
       var wizardElement = similarWizardTemplate.cloneNode(true);
 
       wizardElement.querySelector('.setup-similar-label').textContent = array[i].name;
-      wizardElement.querySelector('.wizard-coat').style.fill = array[i].coatColor;
-      wizardElement.querySelector('.wizard-eyes').style.fill = array[i].eyesColor;
+      window.painting(wizardElement.querySelector('.wizard-coat'), array[i].coatColor);
+      window.painting(wizardElement.querySelector('.wizard-eyes'), array[i].eyesColor);
 
       similarWizardsFragment.appendChild(wizardElement);
     }

@@ -21,7 +21,7 @@ window.util = (function () {
     },
     getUniqueRandomValueFromArray: function (array) {
       var randomIndex = Math.floor(Math.random() * (array.length));
-      return array.splice(randomIndex, 1);
+      return array.splice(randomIndex, 1)[0];
     },
     getMaxOfArray: function (listOfNumbers) {
       return Math.max.apply(null, listOfNumbers);

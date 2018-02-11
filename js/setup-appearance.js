@@ -9,15 +9,18 @@
   var wizardFireballElement = document.querySelector('.setup-fireball-wrap');
 
   var setCoatColor = function () {
-    wizardCoatElement.style.fill = window.util.getRandomValueFromArray(wizardCoatColorsForCustomize);
+    var color = window.util.getRandomValueFromArray(wizardCoatColorsForCustomize);
+    window.painting(wizardCoatElement, color);
   };
 
   var setEyesColor = function () {
-    wizardEyesElement.style.fill = window.util.getRandomValueFromArray(wizardEyesColorsForCustomize);
+    var color = window.util.getRandomValueFromArray(wizardEyesColorsForCustomize);
+    window.painting(wizardEyesElement, color);
   };
 
   var setFireballColor = function () {
-    wizardFireballElement.style.background = window.util.getRandomValueFromArray(window.data.wizardFireballColors);
+    var color = window.util.getRandomValueFromArray(window.data.wizardFireballColors);
+    window.painting(wizardFireballElement, color);
   };
 
   wizardCoatElement.addEventListener('click', setCoatColor);
