@@ -3,14 +3,6 @@
 (function () {
   var setupSimilarElement = document.querySelector('.setup-similar');
 
-  var getWizards = function () {
-    var wizards = [];
-    for (var i = 0; i < window.data.similarWizardsQuantity; i++) {
-      wizards.push(window.generateWizard());
-    }
-    return wizards;
-  };
-
   var renderSimilarWizards = function (array) {
     var similarListElement = document.querySelector('.setup-similar-list');
     var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
@@ -28,6 +20,6 @@
     similarListElement.appendChild(similarWizardsFragment);
   };
 
-  renderSimilarWizards(getWizards());
+  renderSimilarWizards(window.getWizards());
   setupSimilarElement.classList.remove('hidden');
 })();
