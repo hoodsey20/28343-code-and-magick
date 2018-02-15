@@ -44,5 +44,6 @@ window.data = (function () {
       '#e848d5',
       '#e6e848',
     ],
+    similarWizardsQuantity: 4,
   };
 })();

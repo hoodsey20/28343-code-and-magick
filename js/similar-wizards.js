@@ -1,8 +1,6 @@
 'use strict';
 
 (function () {
-  var SIMILAR_WIZARD_QUANTITY = 4;
-
   var setupSimilarElement = document.querySelector('.setup-similar');
 
   var generateWizard = function () {
@@ -15,7 +13,7 @@
 
   var getWizards = function () {
     var wizards = [];
-    for (var i = 0; i < SIMILAR_WIZARD_QUANTITY; i++) {
+    for (var i = 0; i < window.data.similarWizardsQuantity; i++) {
       wizards.push(generateWizard());
     }
     return wizards;
