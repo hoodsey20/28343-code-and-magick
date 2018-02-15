@@ -3,18 +3,10 @@
 (function () {
   var setupSimilarElement = document.querySelector('.setup-similar');
 
-  var generateWizard = function () {
-    return {
-      name: window.util.getUniqueRandomValueFromArray(window.data.wizardNames) + ' ' + window.util.getUniqueRandomValueFromArray(window.data.wizardLastnames),
-      coatColor: window.util.getUniqueRandomValueFromArray(window.data.wizardCoatColors),
-      eyesColor: window.util.getUniqueRandomValueFromArray(window.data.wizardEyesColors),
-    };
-  };
-
   var getWizards = function () {
     var wizards = [];
     for (var i = 0; i < window.data.similarWizardsQuantity; i++) {
-      wizards.push(generateWizard());
+      wizards.push(window.generateWizard());
     }
     return wizards;
   };
