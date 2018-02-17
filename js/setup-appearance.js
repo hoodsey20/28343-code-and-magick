@@ -1,8 +1,28 @@
 'use strict';
 
 (function () {
-  var wizardCoatColorsForCustomize = window.data.wizardCoatColors.slice(0, window.data.wizardCoatColors.length - 1);
-  var wizardEyesColorsForCustomize = window.data.wizardEyesColors.slice(0, window.data.wizardEyesColors.length - 1);
+  var wizardFireballColors = [
+    '#ee4830',
+    '#30a8ee',
+    '#5ce6c0',
+    '#e848d5',
+    '#e6e848',
+  ];
+  var wizardCoatColorsForCustomize = [
+    'rgb(101, 137, 164)',
+    'rgb(241, 43, 107)',
+    'rgb(146, 100, 161)',
+    'rgb(56, 159, 117)',
+    'rgb(215, 210, 55)',
+    'rgb(0, 0, 0)',
+  ];
+  var wizardEyesColorsForCustomize = [
+    'black',
+    'red',
+    'blue',
+    'yellow',
+    'green',
+  ];
 
   var wizardCoatElement = document.querySelector('.setup-wizard .wizard-coat');
   var wizardEyesElement = document.querySelector('.setup-wizard .wizard-eyes');
@@ -19,7 +39,7 @@
   };
 
   var setFireballColor = function () {
-    var color = window.util.getRandomValueFromArray(window.data.wizardFireballColors);
+    var color = window.util.getRandomValueFromArray(wizardFireballColors);
     window.painting(wizardFireballElement, color);
   };
 

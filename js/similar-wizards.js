@@ -20,6 +20,6 @@
     similarListElement.appendChild(similarWizardsFragment);
   };
 
-  renderSimilarWizards(window.getWizards());
+  renderSimilarWizards(window.data);
   setupSimilarElement.classList.remove('hidden');
 })();
